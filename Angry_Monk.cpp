@@ -9,12 +9,17 @@ int main(){
         for(int i=0;i<k;i++){
             cin>>a[i];
         }
-        if(k==2){
-            cout<<a[1]+1<<endl;
+        int maxm=0;
+        for(int x:a){
+            maxm=max(maxm,x);
         }
-        else{
-            cout<<n-a[0]<<endl;
+        int ans=n-maxm;
+        if(ans==0){
+            cout<<ans<<endl; continue;
         }
+        ans=ans-(k-1);
+        ans=ans+n-maxm;
+        cout<<ans<<endl;
     }
 return 0;
 }
